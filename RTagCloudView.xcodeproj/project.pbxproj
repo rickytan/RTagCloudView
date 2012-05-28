@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81618B42157339F700DB218A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81618B41157339F700DB218A /* UIKit.framework */; };
+		81618B44157339F700DB218A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81618B43157339F700DB218A /* Foundation.framework */; };
+		81618B46157339F700DB218A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81618B45157339F700DB218A /* CoreGraphics.framework */; };
+		81618B4C157339F700DB218A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81618B4A157339F700DB218A /* InfoPlist.strings */; };
+		81618B4E157339F700DB218A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81618B4D157339F700DB218A /* main.m */; };
+		81618B52157339F700DB218A /* RTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81618B51157339F700DB218A /* RTAppDelegate.m */; };
+		81618B55157339F700DB218A /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81618B54157339F700DB218A /* RTViewController.m */; };
+		81618B58157339F700DB218A /* RTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81618B56157339F700DB218A /* RTViewController.xib */; };
+		81618B6115733A5200DB218A /* RTagCloudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81618B6015733A5200DB218A /* RTagCloudView.m */; };
+		81618B6315734BCD00DB218A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81618B6215734BCD00DB218A /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		81618B3D157339F700DB218A /* RTagCloudView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTagCloudView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81618B41157339F700DB218A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		81618B43157339F700DB218A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		81618B45157339F700DB218A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		81618B49157339F700DB218A /* RTagCloudView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RTagCloudView-Info.plist"; sourceTree = "<group>"; };
+		81618B4B157339F700DB218A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		81618B4D157339F700DB218A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		81618B4F157339F700DB218A /* RTagCloudView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RTagCloudView-Prefix.pch"; sourceTree = "<group>"; };
+		81618B50157339F700DB218A /* RTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTAppDelegate.h; sourceTree = "<group>"; };
+		81618B51157339F700DB218A /* RTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTAppDelegate.m; sourceTree = "<group>"; };
+		81618B53157339F700DB218A /* RTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTViewController.h; sourceTree = "<group>"; };
+		81618B54157339F700DB218A /* RTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTViewController.m; sourceTree = "<group>"; };
+		81618B57157339F700DB218A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RTViewController.xib; sourceTree = "<group>"; };
+		81618B5F15733A5200DB218A /* RTagCloudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTagCloudView.h; sourceTree = "<group>"; };
+		81618B6015733A5200DB218A /* RTagCloudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTagCloudView.m; sourceTree = "<group>"; };
+		81618B6215734BCD00DB218A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81618B3A157339F700DB218A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81618B6315734BCD00DB218A /* QuartzCore.framework in Frameworks */,
+				81618B42157339F700DB218A /* UIKit.framework in Frameworks */,
+				81618B44157339F700DB218A /* Foundation.framework in Frameworks */,
+				81618B46157339F700DB218A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81618B32157339F600DB218A = {
+			isa = PBXGroup;
+			children = (
+				81618B5E15733A2F00DB218A /* Classes */,
+				81618B47157339F700DB218A /* RTagCloudView */,
+				81618B40157339F700DB218A /* Frameworks */,
+				81618B3E157339F700DB218A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81618B3E157339F700DB218A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81618B3D157339F700DB218A /* RTagCloudView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81618B40157339F700DB218A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81618B6215734BCD00DB218A /* QuartzCore.framework */,
+				81618B41157339F700DB218A /* UIKit.framework */,
+				81618B43157339F700DB218A /* Foundation.framework */,
+				81618B45157339F700DB218A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81618B47157339F700DB218A /* RTagCloudView */ = {
+			isa = PBXGroup;
+			children = (
+				81618B50157339F700DB218A /* RTAppDelegate.h */,
+				81618B51157339F700DB218A /* RTAppDelegate.m */,
+				81618B53157339F700DB218A /* RTViewController.h */,
+				81618B54157339F700DB218A /* RTViewController.m */,
+				81618B56157339F700DB218A /* RTViewController.xib */,
+				81618B48157339F700DB218A /* Supporting Files */,
+			);
+			path = RTagCloudView;
+			sourceTree = "<group>";
+		};
+		81618B48157339F700DB218A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				81618B49157339F700DB218A /* RTagCloudView-Info.plist */,
+				81618B4A157339F700DB218A /* InfoPlist.strings */,
+				81618B4D157339F700DB218A /* main.m */,
+				81618B4F157339F700DB218A /* RTagCloudView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81618B5E15733A2F00DB218A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				81618B5F15733A5200DB218A /* RTagCloudView.h */,
+				81618B6015733A5200DB218A /* RTagCloudView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81618B3C157339F700DB218A /* RTagCloudView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81618B5B157339F700DB218A /* Build configuration list for PBXNativeTarget "RTagCloudView" */;
+			buildPhases = (
+				81618B39157339F700DB218A /* Sources */,
+				81618B3A157339F700DB218A /* Frameworks */,
+				81618B3B157339F700DB218A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RTagCloudView;
+			productName = RTagCloudView;
+			productReference = 81618B3D157339F700DB218A /* RTagCloudView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81618B34157339F600DB218A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 81618B37157339F600DB218A /* Build configuration list for PBXProject "RTagCloudView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 81618B32157339F600DB218A;
+			productRefGroup = 81618B3E157339F700DB218A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81618B3C157339F700DB218A /* RTagCloudView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81618B3B157339F700DB218A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81618B4C157339F700DB218A /* InfoPlist.strings in Resources */,
+				81618B58157339F700DB218A /* RTViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81618B39157339F700DB218A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81618B4E157339F700DB218A /* main.m in Sources */,
+				81618B52157339F700DB218A /* RTAppDelegate.m in Sources */,
+				81618B55157339F700DB218A /* RTViewController.m in Sources */,
+				81618B6115733A5200DB218A /* RTagCloudView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		81618B4A157339F700DB218A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81618B4B157339F700DB218A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		81618B56157339F700DB218A /* RTViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81618B57157339F700DB218A /* en */,
+			);
+			name = RTViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81618B59157339F700DB218A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		81618B5A157339F700DB218A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81618B5C157339F700DB218A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RTagCloudView/RTagCloudView-Prefix.pch";
+				INFOPLIST_FILE = "RTagCloudView/RTagCloudView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		81618B5D157339F700DB218A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RTagCloudView/RTagCloudView-Prefix.pch";
+				INFOPLIST_FILE = "RTagCloudView/RTagCloudView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81618B37157339F600DB218A /* Build configuration list for PBXProject "RTagCloudView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81618B59157339F700DB218A /* Debug */,
+				81618B5A157339F700DB218A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81618B5B157339F700DB218A /* Build configuration list for PBXNativeTarget "RTagCloudView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81618B5C157339F700DB218A /* Debug */,
+				81618B5D157339F700DB218A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81618B34157339F600DB218A /* Project object */;
+}
