@@ -23,7 +23,6 @@
     
     NSTimer                        *_timer;
     BOOL                            _active;
-    
 }
 
 @property (nonatomic, assign) id<RTagCloudViewDatasource> dataSource;
