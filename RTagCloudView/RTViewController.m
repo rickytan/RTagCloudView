@@ -63,7 +63,16 @@
 - (UIFont*)RTagCloudView:(RTagCloudView *)tagCloud
           tagFontOfIndex:(NSInteger)index
 {
-    return [UIFont systemFontOfSize:15.f];
+    UIFont *fonts[] = {
+        [UIFont systemFontOfSize:14.f],
+        [UIFont systemFontOfSize:16.f],
+        [UIFont systemFontOfSize:18.f],
+        [UIFont systemFontOfSize:20.f],
+        [UIFont systemFontOfSize:22.f],
+        [UIFont systemFontOfSize:24.f],
+        [UIFont systemFontOfSize:26.f]
+    };
+    return fonts[index%7];
 }
 
 - (UIColor*)RTagCloudView:(RTagCloudView *)tagCloud tagColorOfIndex:(NSInteger)index
