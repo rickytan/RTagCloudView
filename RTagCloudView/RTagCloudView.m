@@ -19,12 +19,6 @@
 @synthesize dataSource = _dataSource;
 @synthesize delegate = _delegate;
 
-- (void)dealloc
-{
-    [_tabLabels release];
-    [super dealloc];
-}
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -116,12 +110,12 @@
 
 - (void)setDataSource:(id<RTagCloudViewDatasource>)dataSource
 {
-    if (_dataSource == dataSource)
-        return;
-    [_dataSource release];
-    _dataSource = [dataSource retain];
-    
-    [self reloadData];
+    if (_dataSource != dataSource) {
+        //    [_dataSource release];
+        //    _dataSource = [dataSource retain];
+        _dataSource = dataSource;
+        [self reloadData];
+    }
 }
 
 #pragma mark - PrivateMethods
@@ -227,7 +221,6 @@
                              UILabel *lbl = [[UILabel alloc] init];
                              lbl.backgroundColor = [UIColor clearColor];
                              [_tabLabels addObject:lbl];
-                             [lbl release];
                              [self addSubview:lbl];
                          }
                          
