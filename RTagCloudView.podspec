@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { 'rickytan' => 'ricky.tan.xin@gmail.com' }
   s.source       = { :git => "https://github.com/rickytan/RTagCloudView.git", :tag => s.version.to_s }
   s.platform     = :ios
-  s.ios.deployment_target = '5.0'
+  s.ios.deployment_target = '6.0'
   s.source_files = 'RTagCloudView/*.{h,m}'
   s.requires_arc = true
 end
