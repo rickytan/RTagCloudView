@@ -2,13 +2,14 @@
 //  RTagCloudView.m
 //  RTagCloudView
 //
-//  Created by  on 12-5-28.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by rickytan on 12-5-28.
+//  Copyright (c) 2012年 rickytan. All rights reserved.
 //
 
 #import "RTagCloudView.h"
 
 @interface RTagCloudView ()
+@property (nonatomic, assign) CGPoint startPoint;
 - (void)calAngleWithX:(CGFloat)x y:(CGFloat)y z:(CGFloat)z;
 - (void)repositionAll;
 - (void)update;
@@ -60,10 +61,14 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesBegan:touches withEvent:event];
-
-    _active = YES;
     
     UITouch *touch = [touches anyObject];
+    self.startPoint = [touch locationInView:self];
+    if ([[touch view] isKindOfClass:[UILabel class]] && [touch view].alpha > 0.8f) {
+        return;
+    }
+    
+    _active = YES;
     CGPoint loc = [touch locationInView:self];
     _speedY = -(loc.x - self.frame.size.width/2) / 20;
     _speedX = (loc.y - self.frame.size.height/2) / 20;
@@ -77,13 +82,26 @@
     CGPoint loc = [touch locationInView:self];
     _speedY = -(loc.x - self.frame.size.width/2) / 20;
     _speedX = (loc.y - self.frame.size.height/2) / 20;
-    
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesEnded:touches withEvent:event];
-
+    
+    UITouch *touch = [touches anyObject];
+    if ([[touch view] isKindOfClass:[UILabel class]] && [touch view].alpha > 0.8f) {
+        CGPoint endPoint = [touch locationInView:self];
+        CGFloat distance = sqrtf((endPoint.x - self.startPoint.x) * (endPoint.x - self.startPoint.x)
+                                 + (endPoint.y - self.startPoint.y) * (endPoint.y - self.startPoint.y));
+        CGFloat kValidDistance = 5.f;
+        if (distance < kValidDistance) {
+            if ([self.delegate respondsToSelector:@selector(RTagCloudView:didTapOnTagOfIndex:)]) {
+                NSUInteger index = [_tabLabels indexOfObject:[touch view]];
+                [self.delegate RTagCloudView:self didTapOnTagOfIndex:index];
+            }
+        }
+    }
+    
     _active = NO;
 }
 
@@ -200,7 +218,7 @@
                              lable.alpha = 0;
                              lable.center = center;
                          }];
-                     } 
+                     }
                      completion:^(BOOL finished) {
                          [_tabLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
                          
@@ -220,6 +238,9 @@
                              if ([self.dataSource respondsToSelector:@selector(RTagCloudView:tagColorOfIndex:)])
                                  label.textColor = [self.dataSource RTagCloudView:self
                                                                   tagColorOfIndex:i];
+                             if ([self.dataSource respondsToSelector:@selector(RTagCloudView:tagFontOfIndex:)]) {
+                                 label.font = [self.dataSource RTagCloudView:self tagFontOfIndex:i];
+                             }
                              [label sizeToFit];
                              label.center = center;
                          }
@@ -227,4 +248,5 @@
                          [self repositionAll];
                      }];
 }
+
 @end

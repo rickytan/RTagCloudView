@@ -2,8 +2,8 @@
 //  RTagCloudView.h
 //  RTagCloudView
 //
-//  Created by  on 12-5-28.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by rickytan on 12-5-28.
+//  Copyright (c) 2012年 rickytan. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -17,6 +17,7 @@
 - (NSString*)RTagCloudView:(RTagCloudView*)tagCloud tagNameOfIndex:(NSInteger)index;
 @optional
 - (UIColor*)RTagCloudView:(RTagCloudView*)tagCloud tagColorOfIndex:(NSInteger)index;
+- (UIFont*)RTagCloudView:(RTagCloudView *)tagCloud tagFontOfIndex:(NSInteger)index;
 @end
 
 @protocol RTagCloudViewDelegate <NSObject>
