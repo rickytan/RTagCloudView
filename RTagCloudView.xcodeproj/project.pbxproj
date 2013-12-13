@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28386DBA185AD24F00D7B5C9 /* screenshot1.png in Resources */ = {isa = PBXBuildFile; fileRef = 28386DB9185AD24F00D7B5C9 /* screenshot1.png */; };
 		81618B42157339F700DB218A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81618B41157339F700DB218A /* UIKit.framework */; };
 		81618B44157339F700DB218A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81618B43157339F700DB218A /* Foundation.framework */; };
 		81618B46157339F700DB218A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81618B45157339F700DB218A /* CoreGraphics.framework */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28386DB9185AD24F00D7B5C9 /* screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot1.png; sourceTree = "<group>"; };
 		81618B3D157339F700DB218A /* RTagCloudView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTagCloudView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81618B41157339F700DB218A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		81618B43157339F700DB218A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28386DB8185AD24F00D7B5C9 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				28386DB9185AD24F00D7B5C9 /* screenshot1.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		81618B32157339F600DB218A = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		81618B48157339F700DB218A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				28386DB8185AD24F00D7B5C9 /* Screenshots */,
 				81618B49157339F700DB218A /* RTagCloudView-Info.plist */,
 				81618B4A157339F700DB218A /* InfoPlist.strings */,
 				81618B4D157339F700DB218A /* main.m */,
@@ -165,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28386DBA185AD24F00D7B5C9 /* screenshot1.png in Resources */,
 				81618B4C157339F700DB218A /* InfoPlist.strings in Resources */,
 				81618B58157339F700DB218A /* RTViewController.xib in Resources */,
 			);
@@ -290,6 +302,7 @@
 				81618B5D157339F700DB218A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
