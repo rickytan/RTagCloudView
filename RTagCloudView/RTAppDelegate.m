@@ -2,8 +2,8 @@
 //  RTAppDelegate.m
 //  RTagCloudView
 //
-//  Created by  on 12-5-28.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by rickytan on 12-5-28.
+//  Copyright (c) 2012年 rickytan. All rights reserved.
 //
 
 #import "RTAppDelegate.h"
