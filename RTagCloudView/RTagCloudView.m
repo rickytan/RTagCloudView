@@ -10,6 +10,7 @@
 
 @interface RTagCloudView ()
 @property (nonatomic, assign) CGPoint startPoint;
+@property (nonatomic, strong) UILabel *selectedLabel;
 - (void)calAngleWithX:(CGFloat)x y:(CGFloat)y z:(CGFloat)z;
 - (void)repositionAll;
 - (void)update;
@@ -59,6 +60,7 @@
     UITouch *touch = [touches anyObject];
     self.startPoint = [touch locationInView:self];
     if ([[touch view] isKindOfClass:[UILabel class]] && [touch view].alpha > 0.8f) {
+        self.selectedLabel = (UILabel*)[touch view];
         return;
     }
     
@@ -88,7 +90,7 @@
         CGFloat distance = sqrtf((endPoint.x - self.startPoint.x) * (endPoint.x - self.startPoint.x)
                                  + (endPoint.y - self.startPoint.y) * (endPoint.y - self.startPoint.y));
         CGFloat kValidDistance = 5.f;
-        if (distance < kValidDistance) {
+        if (distance < kValidDistance && [touch view] == self.selectedLabel) {
             if ([self.delegate respondsToSelector:@selector(RTagCloudView:didTapOnTagOfIndex:)]) {
                 NSUInteger index = [_tabLabels indexOfObject:[touch view]];
                 [self.delegate RTagCloudView:self didTapOnTagOfIndex:index];
@@ -96,6 +98,7 @@
         }
     }
     
+    self.selectedLabel = nil;
     _active = NO;
 }
 
