@@ -3,4 +3,4 @@ RTagCloudView
 
 a UITableView like API tag cloud view
 
-![Screenshot1](http://dl.dropbox.com/u/46239535/RTagCloudView/screenshot.png)
+![Screenshot1](https://raw.github.com/jimneylee/RTagCloudView/master/RTagCloudViewDemo/Screenshots/screenshot1.png)

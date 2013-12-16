@@ -2,13 +2,15 @@
 //  RTagCloudView.m
 //  RTagCloudView
 //
-//  Created by  on 12-5-28.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by rickytan on 12-5-28.
+//  Copyright (c) 2012年 rickytan. All rights reserved.
 //
 
 #import "RTagCloudView.h"
 
 @interface RTagCloudView ()
+@property (nonatomic, assign) CGPoint startPoint;
+@property (nonatomic, strong) UILabel *selectedLabel;
 - (void)calAngleWithX:(CGFloat)x y:(CGFloat)y z:(CGFloat)z;
 - (void)repositionAll;
 - (void)update;
@@ -17,12 +19,6 @@
 @implementation RTagCloudView
 @synthesize dataSource = _dataSource;
 @synthesize delegate = _delegate;
-
-- (void)dealloc
-{
-    [_tabLabels release];
-    [super dealloc];
-}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -60,10 +56,15 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesBegan:touches withEvent:event];
-
-    _active = YES;
     
     UITouch *touch = [touches anyObject];
+    self.startPoint = [touch locationInView:self];
+    if ([[touch view] isKindOfClass:[UILabel class]] && [touch view].alpha > 0.8f) {
+        self.selectedLabel = (UILabel*)[touch view];
+        return;
+    }
+    
+    _active = YES;
     CGPoint loc = [touch locationInView:self];
     _speedY = -(loc.x - self.frame.size.width/2) / 20;
     _speedX = (loc.y - self.frame.size.height/2) / 20;
@@ -77,13 +78,27 @@
     CGPoint loc = [touch locationInView:self];
     _speedY = -(loc.x - self.frame.size.width/2) / 20;
     _speedX = (loc.y - self.frame.size.height/2) / 20;
-    
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesEnded:touches withEvent:event];
-
+    
+    UITouch *touch = [touches anyObject];
+    if ([[touch view] isKindOfClass:[UILabel class]] && [touch view].alpha > 0.8f) {
+        CGPoint endPoint = [touch locationInView:self];
+        CGFloat distance = sqrtf((endPoint.x - self.startPoint.x) * (endPoint.x - self.startPoint.x)
+                                 + (endPoint.y - self.startPoint.y) * (endPoint.y - self.startPoint.y));
+        CGFloat kValidDistance = 5.f;
+        if (distance < kValidDistance && [touch view] == self.selectedLabel) {
+            if ([self.delegate respondsToSelector:@selector(RTagCloudView:didTapOnTagOfIndex:)]) {
+                NSUInteger index = [_tabLabels indexOfObject:[touch view]];
+                [self.delegate RTagCloudView:self didTapOnTagOfIndex:index];
+            }
+        }
+    }
+    
+    self.selectedLabel = nil;
     _active = NO;
 }
 
@@ -98,12 +113,12 @@
 
 - (void)setDataSource:(id<RTagCloudViewDatasource>)dataSource
 {
-    if (_dataSource == dataSource)
-        return;
-    [_dataSource release];
-    _dataSource = [dataSource retain];
-    
-    [self reloadData];
+    if (_dataSource != dataSource) {
+        //    [_dataSource release];
+        //    _dataSource = [dataSource retain];
+        _dataSource = dataSource;
+        [self reloadData];
+    }
 }
 
 #pragma mark - PrivateMethods
@@ -200,7 +215,7 @@
                              lable.alpha = 0;
                              lable.center = center;
                          }];
-                     } 
+                     }
                      completion:^(BOOL finished) {
                          [_tabLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
                          
@@ -209,7 +224,6 @@
                              UILabel *lbl = [[UILabel alloc] init];
                              lbl.backgroundColor = [UIColor clearColor];
                              [_tabLabels addObject:lbl];
-                             [lbl release];
                              [self addSubview:lbl];
                          }
                          
@@ -220,6 +234,9 @@
                              if ([self.dataSource respondsToSelector:@selector(RTagCloudView:tagColorOfIndex:)])
                                  label.textColor = [self.dataSource RTagCloudView:self
                                                                   tagColorOfIndex:i];
+                             if ([self.dataSource respondsToSelector:@selector(RTagCloudView:tagFontOfIndex:)]) {
+                                 label.font = [self.dataSource RTagCloudView:self tagFontOfIndex:i];
+                             }
                              [label sizeToFit];
                              label.center = center;
                          }
@@ -227,4 +244,5 @@
                          [self repositionAll];
                      }];
 }
+
 @end
